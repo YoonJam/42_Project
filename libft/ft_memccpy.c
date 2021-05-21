@@ -15,5 +15,23 @@
 void	*ft_memccpy(void *restrict dst, const void *restrict src,
 		int c, size_t n)
 {
+	size_t			count;
+	char			*p_dst;
+	char			*p_src;
+	unsigned char	uc;
+
+	p_dst = (char *)dst;
+	p_src = (char *)src;
+	uc = (unsigned char)c;
+	count = 0;
+	while (p_src != '\0' && count < n)
+	{
+		*p_dst = *p_src;
+		if (*p_dst == uc)
+			return ((void*)++p_dst);
+		count++;
+		p_dst++;
+		p_src++;
+	}
 	return (NULL);
 }

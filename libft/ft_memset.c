@@ -14,5 +14,17 @@
 
 void	*memset(void *b, int c, size_t len)
 {
-	return (NULL);
+	char			*ptr_c;
+	size_t			count;
+	unsigned char	uc;
+
+	ptr_c = (char*)b;
+	uc = (unsigned char)c;
+	count = 0;
+	while (count < len)
+	{
+		*ptr_c++ = uc;
+		count++;
+	}
+	return (b);
 }

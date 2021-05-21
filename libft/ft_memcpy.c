@@ -14,5 +14,19 @@
 
 void	*memcpy(void *restrict dst, void *restrict src, size_t n)
 {
-	return (NULL);
+	size_t	count;
+	char	*p_dst;
+	char	*p_src;
+
+	p_dst = (char *)dst;
+	p_src = (char *)src;
+	count = 0;
+	while (p_src != '\0' && count < n)
+	{
+		*p_dst = *p_src;
+		count++;
+		p_dst++;
+		p_src++;
+	}
+	return (dst);
 }

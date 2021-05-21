@@ -14,5 +14,18 @@
 
 int	memcmp(const void *s1, const void *s2, size_t n)
 {
-	return (0);
+	size_t	count;
+	char	*p_s1;
+	char	*p_s2;
+
+	p_s1 = (char*)s1;
+	p_s2 = (char*)s2;
+	count = 0;
+	while (*p_s1 == *p_s2 && *p_s1 != '\0' && count < n)
+	{
+		p_s1++;
+		p_s2++;
+		count++;
+	}
+	return (*p_s1 - *p_s2);
 }
