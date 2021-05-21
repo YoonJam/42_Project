@@ -10,4 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char	*ft_strchr(const char *s, int c)
+{
+	char *last_position;
+
+	last_position = '\0';
+	while (*s != '\0')
+	{
+		if (*s == c)
+			last_position = s;
+		s++;
+	}
+	return (last_position);
+}

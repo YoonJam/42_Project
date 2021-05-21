@@ -16,7 +16,8 @@ size_t	strlcpy(char *dest, const char *src, size_t dstsize)
 {
 	size_t length;
 
-	length = 0;
+	if (dest == NULL || src == NULL)
+		return (0);
 	while (*src != '\0' && length < dstsize - 1)
 	{
 		*dest++ = *src++;

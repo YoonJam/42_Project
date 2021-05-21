@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyyoon <hyyoon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 18:03:40 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/14 18:03:41 by hyyoon           ###   ########.fr       */
+/*   Created: 2021/05/21 17:23:37 by hyyoon            #+#    #+#             */
+/*   Updated: 2021/05/21 17:23:38 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	memcmp(const void *s1, const void *s2, size_t n)
 {
-	while (*s != '\0')
-	{
-		if (*s == c)
-			return (s);
-		s++;
-	}
-	return (s);
+	return (0);
 }
