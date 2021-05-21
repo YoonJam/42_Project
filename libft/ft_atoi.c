@@ -10,41 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_space(int c)
+int	is_space(int c)
 {
-    if ((c >= 9 && c <= 13) || c == 32)
-        return (1);
-    return(0);
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	return (0);
 }
 
-int is_num(int c)
+int	is_num(int c)
 {
-    if (c >= '0' && c <= '9')
-        return (1);
-    return(0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-    int num;
-    int sign;
+	int	num;
+	int	sign;
 
-    num = 0;
-    sign = 1;
-    while (is_space(*str))
-        str++;
-    while (*str == '-' && *str == '+')
-    {
-        if (*str == '-')
-            sign *= -1;
-        str++;
-    }
-    while (is_num(*str))
-    {
-        num *= 10;
-        num += (*str - '0');
-        str++;
-    }
-    
-    return (sign * num);
+	num = 0;
+	sign = 1;
+	while (is_space(*str))
+		str++;
+	while (*str == '-' && *str == '+')
+	{
+		if (*str == '-')
+			sign *= -1;
+		str++;
+	}
+	while (is_num(*str))
+	{
+		num *= 10;
+		num += (*str - '0');
+		str++;
+	}
+	return (sign * num);
 }
