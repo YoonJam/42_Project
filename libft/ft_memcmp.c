@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyyoon <hyyoon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:23:37 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 17:23:38 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/21 20:28:01 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t	count;
 	char	*p_s1;

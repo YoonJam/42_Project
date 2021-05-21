@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyyoon <hyyoon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:24:49 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 17:24:50 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/21 20:27:57 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	count;
 	char	*p_dst;

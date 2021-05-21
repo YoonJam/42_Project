@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyyoon <hyyoon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:24:01 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 17:24:02 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/21 20:28:00 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memcpy(void *restrict dst, void *restrict src, size_t n)
+void	*ft_memcpy(void *restrict dst, void *restrict src, size_t n)
 {
 	size_t	count;
 	char	*p_dst;
