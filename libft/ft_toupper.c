@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyyoon <hyyoon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:59:27 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/14 16:59:28 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/21 20:28:17 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        return c - 32;
-    return c;
+	if (c >= 'A' && c <= 'Z')
+		return (c - 32);
+	return (c);
 }

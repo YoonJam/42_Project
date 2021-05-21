@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/14 16:54:19 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:28:03 by hyyoon           ###   ########.fr       */
+/*   Created: 2021/05/21 17:24:01 by hyyoon            #+#    #+#             */
+/*   Updated: 2021/05/21 20:28:00 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+#include "libft.h"
+
+void	*ft_memcpy(void *restrict dst, void *restrict src, size_t n)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	size_t	count;
+	char	*p_dst;
+	char	*p_src;
+
+	p_dst = (char *)dst;
+	p_src = (char *)src;
+	count = 0;
+	while (p_src != '\0' && count < n)
+	{
+		*p_dst = *p_src;
+		count++;
+		p_dst++;
+		p_src++;
+	}
+	return (dst);
 }

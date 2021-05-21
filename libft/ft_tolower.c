@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyyoon <hyyoon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:59:33 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/14 16:59:34 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/21 20:28:16 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        return c + 32;
-    return c;
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
