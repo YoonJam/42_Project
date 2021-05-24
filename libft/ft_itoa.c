@@ -6,8 +6,13 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:11:45 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:28:02 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 15:58:55 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char *ft_itoa(int n)
+{
+	return (NULL);
+}

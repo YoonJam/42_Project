@@ -6,8 +6,13 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:10:49 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:28:11 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 15:56:34 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char *ft_strjoin(char const *s1, char const *s2)
+{
+	return (NULL);
+}

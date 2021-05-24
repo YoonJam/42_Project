@@ -3,11 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hyyoon <hyyoon@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:13:11 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:13:12 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 16:01:49 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void ft_putnbr_fd(int n, int fd)
+{
+	
+}
