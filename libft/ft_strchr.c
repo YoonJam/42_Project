@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:03:28 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:28:11 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 20:25:07 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char *last_position;
+	char *str;
+	char ch;
 
-	last_position = '\0';
-	while (*s != '\0')
+	str = (char*)s;
+	ch = (char)c;
+	while (*str != '\0')
 	{
-		if (*s == c)
-			last_position = s;
-		s++;
+		if (*str == ch)
+			return (str);
+		str++;
 	}
-	return (last_position);
+	if (*str == ch) 
+		return (str);
+	return (NULL);
 }

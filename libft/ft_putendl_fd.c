@@ -6,8 +6,13 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:12:57 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:28:07 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 16:01:22 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+void ft_putendl_fd(char *s, int fd);
+{
+	
+}

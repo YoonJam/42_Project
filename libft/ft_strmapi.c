@@ -6,8 +6,13 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:12:04 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:28:13 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 15:59:40 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	return (NULL);
+}
