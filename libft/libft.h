@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 16:35:43 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 16:01:41 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 16:31:42 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	*ft_strnstr(const char *str, const char *find, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+void	*calloc(size_t count, size_t size);
+char	*strdup(const char *s1);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

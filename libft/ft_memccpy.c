@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:23:18 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:28:02 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 16:07:27 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src,
 	p_src = (char *)src;
 	uc = (unsigned char)c;
 	count = 0;
-	while (p_src != '\0' && count < n)
+	while (*p_src != '\0' && count < n)
 	{
 		*p_dst = *p_src;
 		if (*p_dst == uc)

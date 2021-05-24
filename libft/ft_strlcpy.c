@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 19:11:59 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:28:12 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 16:08:15 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ size_t	strlcpy(char *dest, const char *src, size_t dstsize)
 {
 	size_t length;
 
+	length = 0;
 	if (dest == NULL || src == NULL)
 		return (0);
 	while (*src != '\0' && length < dstsize - 1)
