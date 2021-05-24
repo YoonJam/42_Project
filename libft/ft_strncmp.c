@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:04:24 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 17:45:33 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 18:43:50 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t length;
+	unsigned char *src1;
+	unsigned char *src2;
 
-	length = 0;
-	while (*s1 == *s2 && *s1 != '\0' && length < n)
+	src1 = (unsigned char*)s1;
+	src2 = (unsigned char*)s2;
+	while (n--)
 	{
-		s1++;
-		s2++;
-		length++;
+		if (!(*src1 != '\0' && *src1 == *src2))
+			return (*src1 - *src2);
+		src1++;
+		src2++;
 	}
-	if (*s1 - *s2 == 0) 
-		return (0);
-
-	return (*s1 - *s2) > 0 ? 1 : -1;
+	return (0);
 }
