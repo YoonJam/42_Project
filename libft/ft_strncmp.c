@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:04:24 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/21 20:28:13 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 17:45:33 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		length++;
 	}
-	return (*s1 - *s2);
+	if (*s1 - *s2 == 0) 
+		return (0);
+
+	return (*s1 - *s2) > 0 ? 1 : -1;
 }

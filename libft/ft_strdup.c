@@ -6,13 +6,16 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 16:31:56 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 16:32:19 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 17:27:30 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
-	return (NULL);
+	char* str;
+	str = (char*)s1;
+	
+	return (str);
 }
