@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:04:11 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 16:20:26 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/24 22:08:16 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	*ft_strnstr(const char *str, const char *find, size_t len)
 
 	if (*find == '\0')
 		return ((char*)str);
-	while (*str != '\0' && len-- > 0)
+	if (len == 0)
+		return (NULL);
+	while (*str != '\0' && len > 0)
 	{
 		i = 0;
 		while ((*(str + i) == *(find + i)) && i < len)
@@ -28,6 +30,7 @@ char	*ft_strnstr(const char *str, const char *find, size_t len)
 				return ((char*)str);
 		}
 		str++;
+		len--;
 	}
 	return (NULL);
 }
