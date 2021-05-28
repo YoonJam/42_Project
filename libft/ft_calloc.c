@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 16:29:42 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 17:27:34 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/05/28 19:52:39 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	printf("count : %zu, size : %zu", count, size);
-	return (NULL);
+	void* ptr;
+
+	ptr = malloc(size * count);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, size * count);
+	return (ptr);
 }
