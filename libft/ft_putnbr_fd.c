@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:13:11 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 16:46:45 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 16:56:54 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		a = (n / 10) * -1;
 		b = (n % 10) * -1;
-		write(fd, '-', 1);
+		write(fd, "-", 1);
 		recursive(a, fd);
 		recursive(b, fd);
 	}
