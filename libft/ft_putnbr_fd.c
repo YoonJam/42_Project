@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:13:11 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 16:14:31 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 16:46:45 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	ft_putnbr_fd(int n, int fd)
 		recursive(a, fd);
 		recursive(b, fd);
 	}
-	else {
+	else
+	{
 		recursive(n, fd);
 	}
 }

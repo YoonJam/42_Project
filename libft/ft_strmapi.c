@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:12:04 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 16:44:53 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 16:48:22 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str = malloc(sizeof(char*) * (len + 1));
 	if (str == NULL)
 		return (NULL);
-
 	while (s[i] != '\0')
 	{
 		str[i] = f(i, s[i]);
