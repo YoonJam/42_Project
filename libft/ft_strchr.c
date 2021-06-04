@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:03:28 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 20:25:07 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 16:47:32 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *s, int c)
 			return (str);
 		str++;
 	}
-	if (*str == ch) 
+	if (*str == ch)
 		return (str);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 #    By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/24 15:41:29 by hyyoon            #+#    #+#              #
-#    Updated: 2021/05/24 17:05:11 by hyyoon           ###   ########.fr        #
+#    Updated: 2021/06/04 16:58:41 by hyyoon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ FILES = ft_memset \
 		ft_tolower \
 		ft_calloc \
 		ft_strdup \
-		# ft_substr \
+		ft_substr \
 		ft_strjoin \
 		ft_strtrim \
 		ft_split \
@@ -51,9 +51,7 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
-		ft_strtok \
-		ft_strcmp \
-		get_next_line \ #
+		
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

@@ -6,13 +6,16 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:12:39 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 16:01:12 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 16:05:42 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-	
+	size_t	len;
+
+	len = ft_strlen(s);
+	write(fd, s, len);
 }
