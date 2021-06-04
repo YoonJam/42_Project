@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 19:11:59 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 21:34:27 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 17:38:57 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
 	size_t length;
-	size_t count;
 
-	length = ft_strlen(src);
-	if (dstsize == 0)
-		return (length);
-	count = 0;
-	if (dest == NULL || src == NULL)
+	if (!dest || !src)
 		return (0);
-	while (*src != '\0' && count < dstsize - 1)
+	length = ft_strlen(src);
+	if (length < dstsize)
+		ft_memcpy(dest, src, length + 1);
+	else if (dstsize)
 	{
-		*dest++ = *src++;
-		count++;
+		ft_memcpy(dest, src, dstsize - 1);
+		dest[dstsize - 1] = '\0';
 	}
-	*dest = '\0';
 	return (length);
 }

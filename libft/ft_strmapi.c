@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:12:04 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 16:48:22 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 17:28:58 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s == NULL || f == NULL)
 		return (NULL);
-	len = ft_strlen(str);
+	len = ft_strlen(s);
 	i = 0;
 	str = malloc(sizeof(char*) * (len + 1));
 	if (str == NULL)

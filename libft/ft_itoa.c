@@ -6,22 +6,19 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:11:45 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 16:33:48 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 18:30:48 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_abs(int nbr)
+int		ft_len(int nbr)
 {
-	return ((nbr < 0) ? -nbr : nbr);
-}
+	int		len;
 
-unsigned int	ft_len(int nbr)
-{
-	unsigned int	len;
-
-	len = (nbr <= 0) ? 1 : 0;
+	len = 0;
+	if (nbr == 0)
+		return (1);
 	while (nbr != 0)
 	{
 		nbr = nbr / 10;
@@ -30,14 +27,19 @@ unsigned int	ft_len(int nbr)
 	return (len);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int				sign;
-	size_t			len;
-	char			*str;
+	int		sign;
+	int		len;
+	char	*str;
 
 	sign = n < 0 ? -1 : 1;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	n *= sign;
 	len = ft_len(n);
+	if (sign == -1)
+		len++;
 	str = malloc(sizeof(char*) * (len + 1));
 	if (str == NULL)
 		return (NULL);
@@ -45,8 +47,8 @@ char			*ft_itoa(int n)
 	len--;
 	while (len >= 0)
 	{
-		str[len] = '0' + ft_abs(n % 10);
-		n = ft_abs(n / 10);
+		str[len] = '0' + (n % 10);
+		n = (n / 10);
 		len--;
 	}
 	if (sign == -1)

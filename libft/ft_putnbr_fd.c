@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:13:11 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 16:56:54 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 17:03:50 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,33 @@
 
 void	recursive(int n, int fd)
 {
-	if (n / 10 > 0)
+	char z;
+
+	z = '0';
+	if (n < 10)
+	{
+		ft_putchar_fd('0' + n, fd);
+	}
+	else
+	{
 		recursive(n / 10, fd);
-	if (n / 10 == 0)
-		ft_putchar_fd(n % 10, fd);
+		recursive(n % 10, fd);
+	}
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	int a;
-	int b;
+	unsigned int a;
 
 	if (n < 0)
 	{
-		a = (n / 10) * -1;
-		b = (n % 10) * -1;
-		write(fd, "-", 1);
-		recursive(a, fd);
-		recursive(b, fd);
+		a = ~n + 1;
+		ft_putchar_fd('-', fd);
+		if (a / 10 > 0)
+		{
+			recursive(a / 10, fd);
+		}
+		recursive(a % 10, fd);
 	}
 	else
 	{

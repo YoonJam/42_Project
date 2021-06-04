@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:11:22 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 16:55:59 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 19:55:17 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	count = get_word_count(s, c);
-	strs = (char**)malloc(sizeof(char*) * (count + 1));
-	if (strs == NULL)
+	if (!(strs = (char**)malloc(sizeof(char*) * (count + 1))))
 		return (NULL);
 	while (*s != '\0')
 	{
@@ -72,9 +71,10 @@ char	**ft_split(char const *s, char c)
 			while (*s != '\0' && !(*s == c))
 				s++;
 			strs[i] = (char*)malloc(sizeof(char) * (s - start) + 1);
-			ft_strncpy(strs[i], start, (s - start));
-			i++;
+			ft_strlcpy(strs[i++], start, (s - start + 1));
 		}
+		if (*s == '\0')
+			break ;
 		s++;
 	}
 	strs[i] = 0;

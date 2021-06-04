@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/24 16:31:56 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 16:50:10 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/04 17:46:09 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,8 @@ char	*ft_strdup(const char *s1)
 
 	len = ft_strlen(s1);
 	ret = (char*)malloc(sizeof(char*) * (len + 1));
-	if (ret != NULL)
-	{
-		while (*s1 != '\0')
-			*ret++ = *s1++;
-		*ret = '\0';
-		ret -= len;
-	}
+	if (ret == NULL)
+		return (NULL);
+	ft_strlcpy(ret, s1, len + 1);
 	return (ret);
 }
