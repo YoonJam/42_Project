@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 16:35:43 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 20:52:37 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 09:21:44 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+} t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
