@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:11:45 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 18:30:48 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 20:07:47 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_itoa(int n)
 	len = ft_len(n);
 	if (sign == -1)
 		len++;
-	str = malloc(sizeof(char*) * (len + 1));
+	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
 	str[len] = '\0';

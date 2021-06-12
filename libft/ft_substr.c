@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:10:32 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 17:49:21 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 20:56:52 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size = ft_strlen(s);
 	if (size <= start)
 		return (ft_strdup(""));
-	str = malloc(sizeof(char*) * (size + 1));
+	if (start + len > size)
+		len = size;
+	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
 	ft_strlcpy(str, s + start, len + 1);
