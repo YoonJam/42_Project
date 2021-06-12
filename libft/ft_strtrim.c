@@ -6,22 +6,11 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:11:05 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 19:15:36 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 20:36:05 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int		is_include(char c, char const *set)
-{
-	while (*set != '\0')
-	{
-		if (*set == c)
-			return (1);
-		set++;
-	}
-	return (0);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -35,13 +24,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = ft_strlen(s1);
 	start = 0;
 	end = len;
-	str = malloc(sizeof(char*) * (len + 1));
-	if (str == NULL)
-		return (NULL);
 	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
 		start++;
 	while (s1[end - 1] != '\0' && ft_strchr(set, s1[end - 1]) && end > start)
 		end--;
+	str = malloc(sizeof(char) * (end - start + 1));
+	if (str == NULL)
+		return (NULL);
 	strlcpy(str, s1 + start, end - start + 1);
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:11:22 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 19:55:17 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 23:02:12 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,19 @@ char	*ft_strncpy(char *dest, char *src, int n)
 size_t	get_word_count(char const *str, char c)
 {
 	size_t	count;
-	int		prv;
 
-	prv = 0;
 	count = 0;
+	if (str == NULL)
+		return (0);
+	while (*str == c)
+		str++;
 	while (*str != '\0')
 	{
 		if (*str == c)
 		{
-			if (prv == 0)
-				count++;
-			prv = 1;
-		}
-		else
-		{
-			prv = 0;
+			count++;
+			while (*str != '\0' && *str == c)
+				str++;
 		}
 		str++;
 	}
