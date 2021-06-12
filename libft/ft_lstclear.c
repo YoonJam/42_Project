@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 09:47:00 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 14:33:41 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 18:20:43 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (current != NULL)
 	{
 		next = current->next;
-		del(next->content);
-		free(current);
+		ft_lstdelone(current, del);
 		current = next;
 	}
-	lst = NULL;
+	*lst = NULL;
 }

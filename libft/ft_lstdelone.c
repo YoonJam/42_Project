@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 09:46:59 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 14:29:44 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 18:19:48 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	while (lst != NULL)
-	{
-		del(lst->content);
-		lst = lst->next;
-	}
+	if (lst == NULL)
+		return ;
+	del(lst->content);
+	free(lst);
 }

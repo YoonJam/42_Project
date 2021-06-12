@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 09:46:56 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 14:28:57 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 18:07:52 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *last_node;
+	t_list	*node;
 
-	last_node = lst;
-	while (last_node->next != NULL)
-		last_node = last_node->next;
-	return (last_node);
+	if (lst == NULL)
+		return (NULL);
+	node = lst;
+	while (node->next != NULL)
+		node = node->next;
+	return (node);
 }

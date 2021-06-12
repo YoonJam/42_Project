@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 09:46:50 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 14:34:05 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 17:49:31 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@ t_list	*ft_lstnew(void *content)
 	if (new_node == NULL)
 		return (NULL);
 	new_node->content = content;
-	new_node->next = NULL;
 	return (new_node);
 }

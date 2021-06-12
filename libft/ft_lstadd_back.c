@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/12 09:47:03 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 14:29:08 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/12 16:05:46 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *last_node;
+	t_list *node;
 
-	last_node = lst;
-	while (last_node->next != NULL)
-		last_node = last_node->next;
-	last_node->next = new;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		node = *lst;
+		while (node->next != NULL)
+			node = node->next;
+		node->next = new;
+	}
 }
