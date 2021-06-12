@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 20:12:39 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 17:51:41 by hyyoon           ###   ########.fr       */
+/*   Created: 2021/06/12 09:47:02 by hyyoon            #+#    #+#             */
+/*   Updated: 2021/06/12 15:15:42 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	len;
-
-	len = ft_strlen(s);
-	write(fd, s, len);
+	new->next = *lst;
+	*lst = new;
 }

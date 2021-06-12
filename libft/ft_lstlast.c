@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 20:12:39 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 17:51:41 by hyyoon           ###   ########.fr       */
+/*   Created: 2021/06/12 09:46:56 by hyyoon            #+#    #+#             */
+/*   Updated: 2021/06/12 18:07:52 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	len;
+	t_list	*node;
 
-	len = ft_strlen(s);
-	write(fd, s, len);
+	if (lst == NULL)
+		return (NULL);
+	node = lst;
+	while (node->next != NULL)
+		node = node->next;
+	return (node);
 }

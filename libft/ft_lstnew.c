@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/21 20:12:39 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 17:51:41 by hyyoon           ###   ########.fr       */
+/*   Created: 2021/06/12 09:46:50 by hyyoon            #+#    #+#             */
+/*   Updated: 2021/06/12 17:49:31 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	len;
+	t_list *new_node;
 
-	len = ft_strlen(s);
-	write(fd, s, len);
+	new_node = malloc(sizeof(t_list));
+	if (new_node == NULL)
+		return (NULL);
+	new_node->content = content;
+	return (new_node);
 }
