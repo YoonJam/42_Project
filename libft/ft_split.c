@@ -6,75 +6,85 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:11:22 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 23:02:12 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/15 18:46:01 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, char *src, int n)
+char	**all_free(char **strs)
 {
-	char	*start_p;
-	int		i;
+	size_t		i;
 
 	i = 0;
-	start_p = dest;
-	while (*src != '\0' && i < n)
-	{
-		*dest++ = *src++;
-		i++;
-	}
-	*dest++ = '\0';
-	return (start_p);
+	while (strs[i])
+		free(strs[i++]);
+	free(strs);
+	return (NULL);
 }
 
-size_t	get_word_count(char const *str, char c)
+size_t	get_word_count(char const *s, char c)
 {
 	size_t	count;
 
 	count = 0;
-	if (str == NULL)
-		return (0);
-	while (*str == c)
-		str++;
-	while (*str != '\0')
+	while (*s != '\0')
 	{
-		if (*str == c)
-		{
-			count++;
-			while (*str != '\0' && *str == c)
-				str++;
-		}
-		str++;
+		while (*s == c)
+			s++;
+		if (*s == '\0')
+			break ;
+		while (*s != '\0' && *s != c)
+			s++;
+		++count;
 	}
-	return (count + 1);
+	return (count);
+}
+
+int		split(char const *s, char c, char **strs)
+{
+	char	*start;
+	size_t	i;
+
+	i = 0;
+	while (*s != '\0')
+	{
+		while (*s == c)
+			s++;
+		if (*s == '\0')
+			break ;
+		start = (char*)s;
+		while (*s != '\0' && *s != c)
+			s++;
+		strs[i] = malloc(sizeof(char) * (s - start) + 1);
+		if (strs[i] == NULL)
+		{
+			all_free(strs);
+			return (0);
+		}
+		ft_strlcpy(strs[i], start, (s - start + 1));
+		i++;
+	}
+	strs[i] = NULL;
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	char	*start;
 	size_t	count;
-	size_t	i;
 
-	i = 0;
+	if (s == NULL)
+		return (NULL);
 	count = get_word_count(s, c);
 	if (!(strs = (char**)malloc(sizeof(char*) * (count + 1))))
 		return (NULL);
-	while (*s != '\0')
+	if (count == 0)
 	{
-		if (!(*s == c))
-		{
-			start = (char*)s;
-			while (*s != '\0' && !(*s == c))
-				s++;
-			strs[i] = (char*)malloc(sizeof(char) * (s - start) + 1);
-			ft_strlcpy(strs[i++], start, (s - start + 1));
-		}
-		if (*s == '\0')
-			break ;
-		s++;
+		strs[0] = 0;
+		return (strs);
 	}
-	strs[i] = 0;
+	if (split(s, c, strs) == 0)
+		return (all_free(strs));
 	return (strs);
 }
