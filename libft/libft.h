@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 16:35:43 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 17:51:41 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/16 17:33:23 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 
 typedef struct		s_list
 {
