@@ -6,13 +6,13 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:11:45 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/12 20:07:47 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/17 14:00:26 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_len(int nbr)
+static int		ft_len(int nbr)
 {
 	int		len;
 
@@ -27,7 +27,7 @@ int		ft_len(int nbr)
 	return (len);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int		sign;
 	int		len;

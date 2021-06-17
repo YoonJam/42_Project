@@ -6,13 +6,13 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:13:11 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/04 17:03:50 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/17 14:01:03 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	recursive(int n, int fd)
+static void	recursive(int n, int fd)
 {
 	char z;
 
@@ -28,7 +28,7 @@ void	recursive(int n, int fd)
 	}
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void		ft_putnbr_fd(int n, int fd)
 {
 	unsigned int a;
 

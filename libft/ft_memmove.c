@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 17:24:49 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/28 17:53:48 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/17 14:24:03 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		p_dst = (char *)dst;
 		p_src = (char *)src;
-		while (len--)
-			*p_dst++ = *p_src++;
+		ft_memcpy(p_dst, p_src, len);
 	}
 	else
 	{
