@@ -6,13 +6,13 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/21 20:11:22 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/15 18:46:01 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/17 14:10:49 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**all_free(char **strs)
+static char		**all_free(char **strs)
 {
 	size_t		i;
 
@@ -20,10 +20,11 @@ char	**all_free(char **strs)
 	while (strs[i])
 		free(strs[i++]);
 	free(strs);
+	strs = NULL;
 	return (NULL);
 }
 
-size_t	get_word_count(char const *s, char c)
+static size_t	get_word_count(char const *s, char c)
 {
 	size_t	count;
 
@@ -41,7 +42,7 @@ size_t	get_word_count(char const *s, char c)
 	return (count);
 }
 
-int		split(char const *s, char c, char **strs)
+static int		split(char const *s, char c, char **strs)
 {
 	char	*start;
 	size_t	i;
@@ -58,10 +59,7 @@ int		split(char const *s, char c, char **strs)
 			s++;
 		strs[i] = malloc(sizeof(char) * (s - start) + 1);
 		if (strs[i] == NULL)
-		{
-			all_free(strs);
 			return (0);
-		}
 		ft_strlcpy(strs[i], start, (s - start + 1));
 		i++;
 	}
@@ -69,7 +67,7 @@ int		split(char const *s, char c, char **strs)
 	return (1);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char	**strs;
 	size_t	count;
@@ -81,7 +79,7 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	if (count == 0)
 	{
-		strs[0] = 0;
+		strs[0] = NULL;
 		return (strs);
 	}
 	if (split(s, c, strs) == 0)

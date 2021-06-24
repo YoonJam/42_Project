@@ -6,27 +6,27 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 17:41:04 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/05/24 17:35:26 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/06/17 13:59:39 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_space(int c)
+static int	is_space(int c)
 {
 	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
 }
 
-int	is_num(int c)
+static int	is_num(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	long	num;
 	int		sign;
