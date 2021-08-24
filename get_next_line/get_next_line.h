@@ -12,11 +12,14 @@
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# define _CRT_SECURE_NO_WARNINGS
 
 # include <stdio.h>
-# include <unistd.h>
+# include <limits.h>
 # include <stdlib.h>
+# include <fcntl.h>
+# include <io.h>
 
-int get_next_line(int fd, char **line);
+int get_next_line(int fd);
 
 #endif
