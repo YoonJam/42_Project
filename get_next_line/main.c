@@ -14,38 +14,23 @@
 
 int main(int argc, char** argv)
 {
-    int i;
     int fd;
-    int numread;
-    char* file_name;
-    // FILE* file;
-    char buffer[BUFFER_SIZE];
     
-    for (i = 0; i < argc; i++) {
-        if (i > 0) {
-            printf("argc : %s\n", argv[i]);
-            file_name = argv[i];
-        }
+    if (argc < 2) {
+        return (0);
     }
-
-    if ((fd = _open(file_name, O_RDONLY)) < 0) {
-        fprintf(stderr, "open error for %s\n", file_name);
+    
+    if ((fd = _open(argv[1], O_RDONLY)) < 0) {
+        fprintf(stderr, "open error\n");
 		exit(1);
     }
 
-    printf("file descriptor : %d\n", fd);
+    printf("%s", get_next_line(fd));
+    printf("%s", get_next_line(fd));
 
-    numread = _read(fd, buffer, BUFFER_SIZE);
-    printf("%s\n", buffer);
-    printf("num read : %d\n", numread);
-
-
-    
     if (_close(fd) != 0) {
         fprintf(stderr, "error while closing");
-    } else {
-        fprintf(stdout, "file close good");
     }
 
-    return 0;
+    return (0);
 }

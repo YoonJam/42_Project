@@ -10,8 +10,50 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int get_next_line(int fd)
-{
+#include "get_next_line.h"
 
-    return 0;
+void clear(char* buffer) 
+{
+    while (*buffer != '\0') {
+        *buffer++ = '\0';
+    }
+}
+
+int is_newline(char *str)
+{
+	int i;
+
+	i = 0;
+	while (*str != '\0')
+	{
+		if (*str++ == '\n')
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+char* get_next_line(int fd)
+{
+    char            buf[BUFFER_SIZE + 1];
+    static char*    temp;
+    int             num_read;
+
+    temp = "";
+    while ((num_read = _read(fd, buf, BUFFER_SIZE)) != 0) {
+        buf[num_read] = '\0';
+
+        if (num_read == -1) {
+            fprintf(stderr, "read error");
+            break;
+        }
+
+        temp = ft_strjoin(temp, buf);
+
+        if (is_newline(temp) >= 0) {
+            return temp;
+        }
+    }
+    
+    return temp;
 }
