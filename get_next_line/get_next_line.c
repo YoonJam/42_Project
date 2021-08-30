@@ -5,23 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 15:36:21 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/16 15:39:21 by hyyoon           ###   ########.fr       */
+/*   Created: 2021/08/30 15:10:29 by hyyoon            #+#    #+#             */
+/*   Updated: 2021/08/30 15:10:29 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void clear(char* buffer) 
+int	is_newline(char *str)
 {
-    while (*buffer != '\0') {
-        *buffer++ = '\0';
-    }
-}
-
-int is_newline(char *str)
-{
-	int i;
+	int	i;
 
 	i = 0;
 	while (*str != '\0')
@@ -33,27 +26,24 @@ int is_newline(char *str)
 	return (-1);
 }
 
-char* get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-    char            buf[BUFFER_SIZE + 1];
-    static char*    temp;
-    int             num_read;
+	char	buf[BUFFER_SIZE + 1];
+	char	*temp;
+	int		num_read;
 
-    temp = "";
-    while ((num_read = _read(fd, buf, BUFFER_SIZE)) != 0) {
-        buf[num_read] = '\0';
-
-        if (num_read == -1) {
-            fprintf(stderr, "read error");
-            break;
-        }
-
-        temp = ft_strjoin(temp, buf);
-
-        if (is_newline(temp) >= 0) {
-            return temp;
-        }
-    }
-    
-    return temp;
+	if ((fd < 0) || (BUFFER_SIZE <= 0))
+		return (NULL);
+	temp = "";
+	while (1)
+	{
+		num_read = read(fd, buf, BUFFER_SIZE);
+		if (num_read <= 0)
+			break ;
+		buf[num_read] = '\0';
+		temp = ft_strjoin(temp, buf);
+		if (is_newline(temp) >= 0)
+			return (temp);
+	}
+	return (temp);
 }

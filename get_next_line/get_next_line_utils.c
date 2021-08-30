@@ -5,47 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/16 15:39:20 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/06/16 15:39:21 by hyyoon           ###   ########.fr       */
+/*   Created: 2021/08/30 15:10:13 by hyyoon            #+#    #+#             */
+/*   Updated: 2021/08/30 15:10:13 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	char	*p_dst;
-	char	*p_src;
-
-	p_dst = (char *)dst;
-	p_src = (char *)src;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	while (n--)
-		*p_dst++ = *p_src++;
-	return (dst);
-}
-
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
-	size_t length;
+	size_t	src_len;
+	size_t	i;
 
-	if (!dest || !src)
-		return (0);
-	length = ft_strlen(src);
-	if (length < dstsize)
-		ft_memcpy(dest, src, length + 1);
-	else if (dstsize)
+	src_len = 0;
+	while (src[src_len] != '\0')
+		src_len++;
+	if (dstsize == 0)
+		return (src_len);
+	i = 0;
+	while (src[i] != '\0' && i < (dstsize - 1))
 	{
-		ft_memcpy(dest, src, dstsize - 1);
-		dest[dstsize - 1] = '\0';
+		dest[i] = src[i];
+		i++;
 	}
-	return (length);
+	dest[i] = 0;
+	return (src_len);
 }
 
 size_t	ft_strlen(const char *str)
 {
-	size_t length;
+	size_t	length;
 
 	length = 0;
 	while (*str++ != '\0')
@@ -76,7 +65,7 @@ char	*ft_strdup(const char *s1)
 	size_t	len;
 
 	len = ft_strlen(s1);
-	ret = (char*)malloc(sizeof(char) * (len + 1));
+	ret = (char *)malloc(sizeof(char) * (len + 1));
 	if (ret == NULL)
 		return (NULL);
 	ft_strlcpy(ret, s1, len + 1);
