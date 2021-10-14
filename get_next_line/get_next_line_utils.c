@@ -6,7 +6,7 @@
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 15:10:13 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/10/05 17:02:54 by hyyoon           ###   ########.fr       */
+/*   Updated: 2021/10/14 18:09:08 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,26 @@ size_t	ft_strlen(const char *str)
 	return (length);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*str;
 	size_t	len;
 	size_t	copy_len;
 
-	if (s1 == NULL || s2 == NULL)
+	//printf("ft_strjoin entry\n");
+	
+	if (s1 == NULL && s2 == NULL)
 		return (NULL);
+	else if (s1 == NULL || s2 == NULL)
+		return (s1 == NULL ? ft_strdup(s2) : ft_strdup(s1));
 	len = ft_strlen(s1) + ft_strlen(s2);
+	//printf("ft_strjoin len %zu\n", len);
 	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
 	copy_len = ft_strlcpy(str, s1, len + 1);
 	ft_strlcpy(str + copy_len, s2, len + 1);
+	free(s1);
 	return (str);
 }
 
