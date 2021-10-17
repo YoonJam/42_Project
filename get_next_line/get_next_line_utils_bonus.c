@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 15:10:13 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/10/17 15:55:12 by hyyoon           ###   ########.fr       */
+/*   Created: 2021/10/17 15:39:46 by hyyoon            #+#    #+#             */
+/*   Updated: 2021/10/17 15:55:09 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {

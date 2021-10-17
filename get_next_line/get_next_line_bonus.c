@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyyoon <hyyoon@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 15:10:29 by hyyoon            #+#    #+#             */
-/*   Updated: 2021/10/17 16:07:22 by hyyoon           ###   ########.fr       */
+/*   Created: 2021/10/17 15:39:42 by hyyoon            #+#    #+#             */
+/*   Updated: 2021/10/17 16:14:11 by hyyoon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-int	get_newline_index(char *str)
+int	is_newline(char *str)
 {
 	int	i;
 
@@ -28,10 +28,10 @@ int	get_newline_index(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*save;
+	static char	*save[OPEN_MAX];
 	char		buf[BUFFER_SIZE + 1];
 	int			num_read;
-	int			index;
+	int			idx;
 	char		*result;
 
 	if ((fd < 0) || (BUFFER_SIZE <= 0))
@@ -42,22 +42,22 @@ char	*get_next_line(int fd)
 		if (num_read <= 0)
 			break ;
 		buf[num_read] = '\0';
-		save = ft_strjoin(save, buf);
-		index = get_newline_index(save);
-		if (index >= 0)
+		save[fd] = ft_strjoin(save[fd], buf);
+		idx = is_newline(save[fd]);
+		if (idx >= 0)
 		{
-			result = split(&save, index);
+			result = split(&save[fd], idx);
 			return (result);
 		}
 	}
-	result = finish(&save, num_read);
+	result = finish(&save[fd], num_read);
 	return (result);
 }
 
 char	*finish(char **save, int num_read)
 {
 	int		len;
-	int		index;
+	int		idx;
 	char	*str;
 
 	if (num_read < 0)
@@ -65,9 +65,9 @@ char	*finish(char **save, int num_read)
 	if (*save != NULL)
 	{
 		len = ft_strlen(*save);
-		index = get_newline_index(*save);
-		if (index >= 0)
-			return (split(save, index));
+		idx = is_newline(*save);
+		if (idx >= 0)
+			return (split(save, idx));
 		str = ft_strdup(*save);
 		free(*save);
 		*save = NULL;
